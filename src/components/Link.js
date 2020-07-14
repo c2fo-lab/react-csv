@@ -15,8 +15,7 @@ class CSVLink extends React.Component {
 
   constructor(props) {
     super(props);
-    this.buildURI = this.buildURI.bind(this);
-    this.state = { href: '' };
+    this.state = {}
   }
 
   componentDidMount() {
