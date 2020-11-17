@@ -81,7 +81,7 @@ export const toCSV = (data, headers, separator, enclosingCharacter) => {
 };
 
 export const buildURI = ((data, uFEFF, headers, separator, enclosingCharacter) => {
-  const csv = toCSV(data, headers, separator, enclosingCharacter);
+  const csv = toCSV(data, headers, separator, enclosingCharacter) + '\n';
   const type = isSafari() ? 'application/csv' : 'text/csv';
   const blob = new Blob([uFEFF ? '\uFEFF' : '', csv], {type});
   const dataURI = `data:${type};charset=utf-8,${uFEFF ? '\uFEFF' : ''}${csv}`;
